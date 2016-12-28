@@ -9,7 +9,7 @@ var LinkedList = function() {
     var newNode = new Node(value);
 
     //if no head value exist (linkedList is empty)
-    if(this.head === null) {
+    if (this.head === null) {
       //create new node for head
       this.head = newNode;
 
@@ -30,7 +30,7 @@ var LinkedList = function() {
 
   list.removeHead = function() {
     // if head is not null (not empty)
-    if(this.head !== null) {
+    if (this.head !== null) {
 
       //save the head value
       var temp = this.head.value;
@@ -45,20 +45,21 @@ var LinkedList = function() {
   list.contains = function(target) {
 
     var check = function (node, target) {
-      if(node === null){
+      if (node === null) {
         return false;
-      } else if(node.next === 'null') {
+      } else if (node.next === 'null') {
         return false;
-      } else if(node.value === target) {
+      } else if (node.value === target) {
         return true;
       }
-        return check(node.next, target);
-      };
-      return check(this.head, target);
+      return check(node.next, target);
     };
 
-  // for(var key in this){
-  //     if(_.contains(this[key],target)) {
+    return check(this.head, target);
+  };
+
+  // for (var key in this) {
+  //     if (_.contains(this[key],target)) {
   //       return true;
   //     }
   //   }
